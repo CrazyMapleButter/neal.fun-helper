@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>neal.fun mathmatics analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>neal.fun mathmatics analyzer</h1>
+            <p>Upload an image of your level 34 'mathmatics' on neal.fun's 'I'm not a robot' game</p>
+        </header>
+
+        <main>
+            <div class="main-content">
+                <div class="main-sections">
+                    <div class="upload-section">
+                        <form id="imageForm" enctype="multipart/form-data">
+                            <div class="upload-area" id="uploadArea">
+                                <div class="upload-content">
+                                    <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                                        <circle cx="12" cy="13" r="3"></circle>
+                                    </svg>
+                                    <p>Drag and drop an image here, or <span class="browse-text">browse files</span></p>
+                                    <small>Supports JPG, PNG, GIF up to 10MB</small>
+                                </div>
+                                <input type="file" id="imageInput" name="image" accept="image/*" required>
+                            </div>
+                            <button type="submit" id="analyzeBtn" disabled>Analyze Image</button>
+                        </form>
+                    </div>
+
+                    <div class="preview-section" id="previewSection" style="display: none;">
+                        <h3>Image Preview</h3>
+                        <img id="imagePreview" alt="Selected image preview">
+                    </div>
+
+                    <div class="loading-section" id="loadingSection" style="display: none;">
+                        <div class="spinner"></div>
+                        <p>Analyzing your image with ChatGPT...</p>
+                    </div>
+
+                    <div class="result-section" id="resultSection" style="display: none;">
+                        <h3>AI Analysis Result</h3>
+                        <div class="result-content" id="resultContent"></div>
+                        <button id="resetBtn" type="button">Analyze Another Image</button>
+                    </div>
+
+                    <div class="error-section" id="errorSection" style="display: none;">
+                        <div class="error-content">
+                            <h3>Error</h3>
+                            <p id="errorMessage"></p>
+                            <button id="retryBtn" type="button">Try Again</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="example-section">
+                    <h3>Example</h3>
+                    <p>This is what your picture should look like:</p>
+                    <div class="example-image">
+                        <img src="images/mathmatics-example.png" alt="Example of neal.fun mathmatics challenge" id="exampleImage">
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
